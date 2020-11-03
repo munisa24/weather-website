@@ -10,7 +10,7 @@ const response  = require('express');
 
 const app = express();
 
-const port = process.env
+const port = process.env.PORT || 3000;
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -22,6 +22,8 @@ const partials = path.join(__dirname, '../templates/partials');
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 hbs.registerPartials(partials);
+
+app.set("port", PORT);
 
 // Setup static directory
 app.use(express.static(publicDirectoryPath));
