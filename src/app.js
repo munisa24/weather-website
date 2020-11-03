@@ -23,8 +23,6 @@ app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 hbs.registerPartials(partials);
 
-app.set("port", PORT);
-
 // Setup static directory
 app.use(express.static(publicDirectoryPath));
 
